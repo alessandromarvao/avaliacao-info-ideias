@@ -25,24 +25,21 @@ function sequenciaCrescente(array $array)
         // Percorre o novo array
         for ($x = 0; $x < count($novo_array); $x++) {
             // Não conta o primeiro valor do novo array (não dá pra saber o resultado anterior a ele)
-            if($x!=0) {
-                // Confere se os elementos não se econtram em ordem crescente
-                if($novo_array[$x] - 1 != $novo_array[$x-1]){
-                    // Confirma que o elemento não está em ordem crescente
-                    $bool_iteracao = false;
-                    // Termina esta iteração e percorre o próximo caminho
-                    break;
-                }
+            if ($x != 0 && ($novo_array[$x] - 1 != $novo_array[$x - 1])) {
+                // Confirma que o elemento não está em ordem crescente
+                $bool_iteracao = false;
+                // Termina esta iteração e percorre o próximo caminho
+                break;
             }
         }
 
         // Verifica se algum dos arrays novos estão em ordem crescente
-        if($bool_iteracao) {
+        if ($bool_iteracao) {
             $bool = true;
         }
     }
 
-    if($bool) {
+    if ($bool) {
         return "TRUE";
     } else {
         return "FALSE";
